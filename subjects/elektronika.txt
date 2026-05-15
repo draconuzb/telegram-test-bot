@@ -1,0 +1,557 @@
+1.	Arduino dasturida setup() funksiyasi qanday vazifani bajaradi?
+A) Cheksiz ishlaydi
++B) Bir marta ishga tushadi
+C) Har sekundda ishlaydi
+D) Faqat sensorlarni o‘qiydi
+2.	Arduino dasturida loop() funksiyasi nima qiladi?
+A) Bir marta ishlaydi
+B) Arduino o‘chadi
++C) Cheksiz takrorlanadi
+D) Faqat LED uchun ishlaydi
+3.	pinMode(13, OUTPUT); buyrug‘i nimani bildiradi?
+A) 13-pin kirish rejimida ishlaydi
++B) 13-pin chiqish rejimida ishlaydi
+C) 13-pin o‘chiriladi
+D) 13-pin analog rejimda ishlaydi
+4.	digitalWrite(13, HIGH); buyrug‘i nima qiladi?
++A) 13-pinga kuchlanish beradi
+B) 13-pinni o‘chiradi
+C) 13-pinni kirish qiladi
+D) Arduino o‘chadi
+5.	digitalWrite(13, LOW); buyrug‘i nimani anglatadi?
+A) Pin yoqiladi
++B) Pin o‘chiriladi
+C) Pin analog bo‘ladi
+D) Pin sensor bo‘ladi
+6.	delay(1000); buyrug‘i nimani bildiradi?
+A) 1 millisekund kutadi
++B) 1 sekund kutadi
+C) 10 sekund kutadi
+D) 100 sekund kutadi
+7.	Arduino dasturida pinni kirish rejimiga o‘tkazish uchun qaysi buyruq ishlatiladi?
+A) pinWrite()
+B) digitalMode()
++C) pinMode(pin, INPUT)
+D) pinHigh()
+8.	Arduino dasturida LED ni yoqish uchun qaysi buyruq ishlatiladi?
++A) digitalWrite(pin, HIGH)
+B) digitalWrite(pin, LOW)
+C) pinMode(pin)
+D) delay(pin)
+9.	Arduino dasturida HIGH qiymati nimani bildiradi?
+A) 0 volt
+B) 3 volt
++C) 5 volt
+D) 10 volt
+10.	Arduino dasturida LOW qiymati nimani bildiradi?
+A) 5 volt
+B) 3 volt
+C) 1 volt
++D) 0 volt
+11.	Arduino dasturida Serial aloqa boshlanishi uchun qaysi buyruq yoziladi?
+A) Serial.start()
++B) Serial.begin()
+C) Serial.write()
+D) Serial.read()
+12.	Serial.begin(9600); dagi 9600 nimani bildiradi?
+A) Pin raqamini
+B) Xotira hajmini
++C) Ma’lumot uzatish tezligini (baud rate)
+D) Kuchlanishni
+13.	Quyidagi buyruq nima qiladi?
+Serial.print(25);
++A) 25 sonini Serial Monitor ga chiqaradi
+B) 25 sonini o‘chiradi
+C) LED ni yoqadi
+D) Arduino ni o‘chiradi
+14.	Serial.println() funksiyasi Serial.print() dan nimasi bilan farq qiladi?
++A) Yangi qatordan yozadi
+B) LED ni yoqadi
+C) Sensorni o‘chiradi
+D) Arduino ni o‘chiradi
+15.	Arduino IDE da Serial Monitor ni ochish uchun qaysi klavishlar ishlatiladi?
+A) Ctrl + S
++B) Ctrl + Shift + M
+C) Ctrl + C
+D) Ctrl + V
+16.	Quyidagi kod nimani chiqaradi?
+Serial.println("Salom");
++A) Salom so‘zini chiqaradi
+B) LED ni yoqadi
+C) Arduino ni o‘chiradi
+D) Sensorni o‘chiradi
+17.	Serial Monitor qaysi qurilma bilan aloqa qiladi?
++A) Kompyuter va Arduino
+B) Sensor va LED
+C) Batareya va motor
+D) LCD va relay
+18.	Serial Monitor ko‘pincha nima uchun ishlatiladi?
++A) Dastur natijalarini tekshirish uchun
+B) Arduino ni o‘chirish uchun
+C) LED ni o‘zgartirish uchun
+D) Batareyani zaryadlash uchun
+19.	Serial.print("Temp="); buyrug‘i nima qiladi?
++A) Temp= yozuvini Serial Monitor ga chiqaradi
+B) Arduino ni o‘chiradi
+C) Sensorni o‘chiradi
+D) LED ni o‘chiradi
+20.	Serial Monitor orqali foydalanuvchi nima qilishi mumkin?
++A) Arduino ga ma’lumot yuborishi mumkin
+B) Arduino ni buzishi mumkin
+C) Arduino ni o‘chirishi mumkin
+D) LED ni olib tashlashi mumkin
+21.	RTClib kutubxonasi Arduino da nima uchun ishlatiladi?
+A) Sensorlarni boshqarish uchun
++B) Haqiqiy vaqt moduli bilan ishlash uchun
+C) LED ni yoqish uchun
+D) Motorni boshqarish uchun
+22.	DS1307 RTC moduli Arduino bilan odatda qaysi aloqa protokoli orqali ishlaydi?
+A) SPI
+B) UART
++C) I2C
+D) USB
+23.	DS1307 RTC moduli Arduino bilan odatda qaysi aloqa protokoli orqali ishlaydi?
+A) SPI
+B) UART
++C) I2C
+D) USB
+24.	DS1307 modulida SCL pini Arduino UNO ning qaysi piniga ulanadi?
+A) A3
+B) A4
++C) A5
+D) D12
+25.	DateTime now = rtc.now(); buyrug‘i nima qiladi?
+A) RTC ni o‘chiradi
++B) Hozirgi vaqtni RTC modulidan o‘qiydi
+C) Vaqtni o‘zgartiradi
+D) Arduino ni o‘chiradi
+26.	Quyidagi kod nimani bildiradi?
+Serial.println(now.hour());
++A) Soatni Serial monitorga chiqaradi
+B) Yilni chiqaradi
+C) Kunni chiqaradi
+D) Minutni chiqaradi
+27.	Quyidagi kod nimani chiqaradi?
+Serial.println(now.minute());
+A) Sekundni
+B) Soatni
++C) Minutni
+D) Yilni
+28.	Quyidagi kod nimani chiqaradi?
+Serial.println(now.second());
++A) Sekundni
+B) Soatni
+C) Kunni
+D) Yilni
+29.	RTC modulining asosiy vazifasi nima?
+A) Temperatura o‘lchash
++B) Haqiqiy vaqtni saqlash va hisoblash
+C) Kuchlanishni oshirish
+D) Signal kuchaytirish
+30.	RTC modulida batareya nima uchun ishlatiladi?
+A) Arduino ni ishlatish uchun
++B) Elektr uzilganda ham vaqtni saqlash uchun
+C) Sensorni ishlatish uchun
+D) LED ni yoqish uchun
+31.	digitalRead(pin) funksiyasi qanday ma’lumot qaytaradi?
+A) Analog qiymatni (0–1023)
++B) Raqamli holatni: HIGH yoki LOW
+C) Pin raqamini
+D) Vaqtni (millisekundlarda)
+32.	digitalRead() funksiyasidan foydalanish uchun pin qanday rejimga o‘tkazilishi kerak?
+A) OUTPUT
++B) INPUT yoki INPUT_PULLUP
+C) ANALOG
+D) PWM
+34.	INPUT_PULLUP rejimi qanday afzallikka ega?
++A) Tashqi pull-up rezistor kerak emas
+B) Pin tezroq ishlaydi
+C) Analog signallarni o‘qiydi
+D) Faqat LOW holatni beradi
+35.	INPUT_PULLUP rejimida tugma bosilmaganda digitalRead() qanday qiymat qaytaradi?
+A) LOW
++B) HIGH
+C) 0
+D) 1023
+36.	Tugma bosilganda (INPUT_PULLUP rejimida) odatda qanday qiymat o‘qiladi?
+A) HIGH
++B) LOW
+C) 1
+D) Floating
+37.	Quyidagi kod parchasi nimani anglatadi?
+int sensor = digitalRead(4);
+if (sensor == HIGH) { Serial.println("Motion!"); }
+A) Harakat yo‘q bo‘lsa xabar chiqadi
++B) Harakat bo‘lsa xabar chiqadi
+C) Har doim xabar chiqadi
+D) Hech qachon xabar chiqarmaydi
+38.	digitalRead() funksiyasi qaysi turdagi sensorlar bilan ko‘pincha ishlatiladi?
+A) Faqat harorat sensorlari
++B) Tugma, rele, PIR motion sensor, ON/OFF datchiklar
+C) Faqat analog sensorlar
+D) Faqat ultratovush sensorlari
+39.	Pull-down rezistor qo‘yilganda tugma bosilmaganda pin qanday holatda bo‘ladi?
+A) HIGH
++B) LOW
+C) Floating
+D) 3.3V
+40.	Quyidagi holatlardan qaysi biri digitalRead() uchun to‘g‘ri emas?
+A) HIGH ≈ 5V (yoki 3.3V)
+B) LOW ≈ 0V
+C) Qiymatlar 0 yoki 1 sifatida saqlanadi
++D) Har qanday qiymatni (masalan 512) qaytarishi mumkin
+41.	HC-SR04 datchigi bilan masofa o‘lchash uchun qaysi pin ishlatiladi?
++A) Trig – signal yuborish, Echo – signal qabul qilish
+B) Trig – signal qabul qilish, Echo – signal yuborish
+C) Ikkalasi ham analog kirish
+D) Ikkalasi ham chiqish
+
+42.	pulseIn(echo, HIGH) funksiyasi qanday ma’lumot beradi?
+A) Signal kuchini
++B) Signal vaqtini mikrosekundda
+C) Pin raqamini
+D) Masofani santimetrda
+
+43.	Masofani hisoblash formulasida vaqtni 2 ga bo‘lish sababini aniqlang:
+A) Tovush tezligini oshirish uchun
++B) Signal borib va qaytib kelish vaqtini hisoblash uchun
+C) Aniqlikni oshirish uchun
+D) Santimetrga o‘tkazish uchun
+
+44.	Havodagi tovush tezligi odatda qancha deb olinadi?
+A) 300 m/s
++B) 340 m/s
+C) 1500 m/s
+D) 1000 m/s
+
+45.	Trig piniga impuls berishda delayMicroseconds(10) nima uchun ishlatiladi?
++A) Sensor minimal 10 mikrosekund impuls yuborishi uchun
+B) Arduino’ni tezlashtirish uchun
+C) Echo signalini kutish uchun
+D) Haroratni barqarorlashtirish uchun
+
+46.	HC-SR04 datchigi bilan o‘lchash oralig‘i odatda nechchi santimetr?
+A) 1–100 sm
++B) 2–400 sm
+C) 10–1000 sm
+D) 0–50 sm
+
+47.	Ultrasonik datchikning asosiy kamchiligi nima?
+A) Faqat qorong‘uda ishlaydi
++B) Yumshoq sirtlar tovushni yutib yuborishi mumkin
+C) Har doim shaffof narsalarni ko‘radi
+D) Juda qimmat
+
+48.	INPUT_PULLUP rejimida tugma bosilganda digitalRead() qanday qiymat beradi?
+A) HIGH
++B) LOW
+C) Floating
+D) 1023
+
+49.	Relay moduli Arduino’da qanday asosiy vazifani bajaradi?
+A) Masofani o‘lchash
++B) Katta kuchlanishdagi qurilmalarni (220V) kichik signal bilan boshqarish
+C) Vaqtni saqlash
+D) Analog signallarni o‘qish
+
+50.	Relay ichida qanday mexanizm yordamida kontaktlar ochiladi/yopiladi?
+A) Transistor orqali
++B) Elektromagnit (g‘altak) orqali
+C) Optik sensor orqali
+D) Kondensator orqali
+
+51.	Ko‘pchilik relay modullarida qancha boshqaruv pini bo‘ladi?
+A) 2 ta
++B) 3 ta (VCC, GND, IN)
+C) 4 ta
+D) 5 ta
+
+52.	Relayning IN (signal) piniga HIGH berilganda ko‘pincha nima bo‘ladi?
+A) Relay doim o‘chadi
++B) Relay yoqiladi (modul turiga qarab, ba’zilarida LOW yoqadi)
+C) Hech qanday o‘zgarish bo‘lmaydi
+D) Pin rejimi INPUT ga o‘tadi
+
+53.	Relay kontaktlaridan qaysi biri “odatda uzilgan” holatda bo‘ladi?
+A) COM
++B) NO (Normally Open)
+C) NC (Normally Closed)
+D) VCC
+
+54.	NC (Normally Closed) kontakt qachon ulangan bo‘ladi?
+A) Relay yoqilganda
++B) Relay o‘chirilganda
+C) Har doim uzilgan
+D) Faqat 220V bo‘lganda
+
+55.	Relay modulini Arduino’ga ulashda GND piniga nima ulanadi?
+A) 5V
++B) Arduino GND
+C) Qurilma (lampa)ning fazasi
+D) Echo pin
+
+56.	Elektronika fani asosan qaysi sohalarga asoslanadi?
+A) Faqat mexanika va termodinamikaga
++B) Elektromagnit maydon nazariyasi, kvant mexanikasi, qattiq jism tuzilishi va elektr o‘tkazuvchanlik hodisalariga
+C) Faqat optika va akustikaga
+D) Biologiya va kimyoga
+
+57.	Sxema nima deb ataladi va uning asosiy vazifasi nima?
+A) Qurilmaning narxini ko‘rsatuvchi hujjat
++B) Qurilmaning elementlari qanday ulanganini va ishlashini ko‘rsatuvchi chizma (qurilmaning “pasporti” yoki “xaritasi”)
+C) Faqat rangli chizma
+D) Dasturiy ta’minot kodlari
+
+58.	Quyidagi sxema turlaridan qaysi biri qurilmaning alohida qismlarini “blok” ko‘rinishida ko‘rsatadi?
+A) Elektr sxemalari
+B) Elektron sxemalar
+C) Funktsional sxemalar
++D) Blok-sxemalar
+
+59.	Tranzistor qaysi yilda ixtiro qilingan va kimlar tomonidan?
+A) 1904-yilda Jon Fleming tomonidan
++B) 1947-yilda John Bardeen, Walter Brattain va William Shockley tomonidan
+C) 1960-yillarda Robert Noyce va Jack Kilby tomonidan
+D) 1971-yilda Intel kompaniyasi tomonidan
+
+60.	Zamonaviy elektronika davrida (XXI asr) qaysi yo‘nalishlar asosiy rivojlanish sifatida tilga olinadi?
+A) Faqat vakuum lampalari va radio
++B) Nanoelektronika, mobil texnologiyalar (smartfonlar, IoT), sun’iy intellekt chiplari va kvant kompyuterlar
+C) Faqat shaxsiy kompyuterlar (PC)
+D) Faqat telegraf va telefon
+
+61.	Rezistorning asosiy vazifasi nima?
+A) Elektr zaryadini saqlash
++B) Tokni cheklash yoki taqsimlash
+C) Magnit maydon hosil qilish
+D) Yorug‘lik chiqarish
+
+62.	Kondensatorning shartli grafik belgisi qanday ko‘rinishda bo‘ladi?
+A) Zigzag chiziq
++B) Ikki parallel chiziq
+C) Spiral shakl yoki bobin
+D) Uchburchak ichida chiziq
+
+63.	Quyidagi elementlardan qaysi biri tok o‘tganda yorug‘lik chiqaradi?
+A) Rezistor
+B) Kondensator
+C) Induktor
++D) LED (Light Emitting Diode)
+
+64.	Elektron sxema simulyatorlarining qaysi turi analog va raqamli komponentlarni bir vaqtda ishlatishga imkon beradi?
+A) Faqat analog simulyatorlar
+B) Faqat raqamli simulyatorlar
++C) Aralash (Mixed-signal) simulyatorlar
+D) Faqat logik simulyatorlar
+
+65.	Electronics Workbench (EWB) paketi haqida qaysi gap to‘g‘ri?
+A) Faqat raqamli sxemalarni simulyatsiya qiladi
++B) Analog va raqamli sxemalarni yaratish va simulyatsiya qilish uchun ishlatiladi, tok va kuchlanishni o‘lchash imkoniyati bor
+C) Faqat dasturiy kod yozish uchun mo‘ljallangan
+D) Haqiqiy komponentlarni majburiy ravishda ulashni talab qiladi
+
+66.	Raqamli sxemotexnika asosan qanday signallar bilan ishlaydi?
+A) Uzluksiz o‘zgaruvchan signallar (analog)
++B) Faqat ikki holatli signallar: 0 va 1 (raqamli)
+C) Faqat tovush va harorat signallari
+D) Magnit maydon signallari
+
+67.	Quyidagi mantiqiy elementlardan qaysi biri "VA" (AND) deb ataladi?
+A) OR (YOKI)
+B) NOT (INKOR)
++C) AND (VA)
+D) XOR
+
+68.	Hisoblash texnikasining asosiy elementlaridan biri bo‘lgan operativ xotira qanday ataladi?
+A) ROM (Doimiy xotira)
++B) RAM (Operativ xotira)
+C) Mikroprotsessor
+D) Aloqa interfeysi
+
+69.	Quyidagi elektr kattaliklardan qaysi biri quvvatni ifodalaydi?
+A) (I) – Amper (A)
+B) (U) – Volt (V)
++C) (P) – Watt (W)
+D) (Q) – Kulon (C)
+
+70.	Elektr zanjirlarida parallel ulashda qaysi kattalik barcha elementlar uchun bir xil bo‘ladi?
+A) Tok (I)
+B) Qarshilik (R)
++C) Kuchlanish (U)
+D) Energiya (W)
+
+71.	O'zgarmas tok elektr zanjirida Om qonuni qanday ifodalanadi?
+A) U = I + R
++B) U = I * R
+C) P = U / I
+D) I = U + R
+
+72.	Ketma-ket ulangan rezistorlarda qaysi kattalik barcha elementlar uchun bir xil bo‘ladi?
+A) Kuchlanish (U)
++B) Tok (I)
+C) Quvvat (P)
+D) Qarshilik (R)
+
+73.	Kirxgofning birinchi qonuni (toklar qonuni) nimani bildiradi?
+A) Konturda kuchlanishlar yig'indisi nolga teng
++B) Tugun nuqtada kiruvchi va chiquvchi toklar yig'indisi nolga teng
+C) Umumiy quvvat doimiy
+D) Tok kuchlanishga teskari proportsional
+
+74.	Elektr zanjirida quvvat qanday formula bilan hisoblanadi?
++A) P = U * I
+B) P = I * R
+C) P = U / R
+D) P = U + I
+
+75.	Murakkab doimiy tok zanjirlarini hisoblashda kontur toklar usuli qaysi qonunga asoslanadi?
+A) Faqat Om qonuniga
++B) Kirxgofning ikkinchi qonuni (kontur bo‘ylab kuchlanishlar yig‘indisi) va birinchi qonunga
+C) Faqat parallel ulash qoidasiga
+D) Quvvat hisobiga
+
+76.	Murakkab elektr zanjirida Kirxgof qonunlarini qo‘llashning asosiy maqsadi nima?
+A) Faqat oddiy zanjirlardagi tokni topish
++B) Tarmoqlangan (murakkab) zanjirlardagi noma'lum toklar va kuchlanishlarni aniqlash
+C) Faqat quvvatni hisoblash
+D) Zanjirni faqat ketma-ket ulash uchun
+
+77.	Arduino Uno’da raqamli (digital) pinlar nechta?
+A) 10 ta
+B) 12 ta
++C) 14 ta
+D) 16 ta
+
+78.	Arduino’da GND pini nima vazifani bajaradi?
+A) Signal uzatadi
+B) Quvvat beradi
++C) Umumiy yer (minus) vazifasini bajaradi
+D) Reset qiladi
+
+79.	LED’ni Arduino’ga ulashda rezistor nima uchun kerak?
+A) Kuchlanishni oshirish uchun
++B) Tokni cheklash uchun
+C) Rangni o‘zgartirish uchun
+D) Signallarni kuchaytirish uchun
+
+80.	LED’ning uzun oyog‘i (anodi) qayerga ulanadi?
+A) GND ga
+B) Analog pin ga
++C) Digital pin ga (rezistor orqali)
+D) Reset pin ga
+
+81.	Arduino Uno’da 5V pini nima uchun ishlatiladi?
+A) Dastur yozish uchun
++B) Sensor va modullarni quvvatlash uchun
+C) Signal qabul qilish uchun
+D) Reset qilish uchun
+
+82.	Ketma-ket ulangan rezistorlarda qaysi kattalik bir xil bo‘ladi?
+A) Kuchlanish
+B) Qarshilik
++C) Tok kuchi
+D) Quvvat
+
+83.	Parallel ulangan rezistorlarda qaysi kattalik bir xil bo‘ladi?
+A) Tok
+B) Qarshilik
+C) Quvvat
++D) Kuchlanish
+
+84.	Parallel ulangan rezistorlarning umumiy qarshiligi qanday bo‘ladi?
+A) Eng kattasiga teng
+B) Eng kichigidan katta
++C) Eng kichigidan kichik
+D) Nolga teng
+
+85.	12 V manbaga 4 Ω rezistor ulangan. Tok kuchi nechaga teng?
+A) 1 A
+B) 2 A
++C) 3 A
+D) 4 A
+
+86.	12 V manbaga 6 Ω rezistor ulangan. Tok kuchi nechaga teng?
+A) 1 A
++B) 2 A
+C) 3 A
+D) 6 A
+
+87.	Kirxgof birinchi qonuni nimani ifodalaydi?
+A) Kuchlanishlar yig‘indisini
+B) Qarshiliklar yig‘indisini
++C) Tugundagi toklar balansini
+D) Quvvatni
+
+88.	Tugunda Kirxgof qonuniga ko‘ra nima bajariladi?
++A) Kiruvchi toklar yig‘indisi = chiquvchi toklar yig‘indisi
+B) Kuchlanish nolga teng
+C) Qarshilik maksimal bo‘ladi
+D) Tok nol bo‘ladi
+
+89.	Bir LED 2V da yonadi. Manba kuchlanishi 5V. LED dan 20 mA tok o‘tkazmoqchisiz. Qanday rezistor qo‘yish kerak?
+A) 100 Ω
++B) 150 Ω
+C) 220 Ω
+D) 330 Ω
+
+90.	Arduino pinidan 5V chiqadi. Siz 3.3V bilan ishlaydigan sensorni ulamoqchisiz. Sensor 15 mA tok tortadi. Qarshilikni toping.
+A) 56 Ω
++B) 113 Ω
+C) 120 Ω
+D) 220 Ω
+
+91.	9V manbadan 3V ga tushirmoqchisiz. Qurilma 20 mA tok iste’mol qiladi. Rezistor qiymati qancha?
+A) 150 Ω
+B) 220 Ω
++C) 300 Ω
+D) 330 Ω
+
+92.	12 V kuchlanishli manbaga 4 Ω va 6 Ω rezistorlar parallel ulangan. Har bir tarmoqdagi tokni toping.
++A) 3 A va 2 A
+B) 3 A va 2,5 A
+C) 4 A va 6 A
+D) 2 A va 8 A
+
+93.	Ketma-ket ulangan R1 = 2 Ω, R2 = 8 Ω, R3 = 7 Ω. Umumiy qarshilikni toping.
+A) 16 Ω
+B) 25 Ω
+C) 35 Ω
++D) 17 Ω
+
+94.	24 V kuchlanishda 4 A tok oqmoqda. Qarshilikni aniqlang.
+A) 4 Ω
+B) 5 Ω
++C) 6 Ω
+D) 8 Ω
+
+95.	Ketma-ket ulangan 4 Ω, 6 Ω va 10 Ω rezistorlar umumiy qarshiligi nechaga teng?
+A) 18 Ω
++B) 20 Ω
+C) 22 Ω
+D) 24 Ω
+
+96.	Parallel ulangan 4 Ω va 4 Ω rezistorlar 8 V manbaga ulangan. Umumiy tokni toping.
+A) 2 A
++B) 4 A
+C) 6 A
+D) 8 A
+
+97.	15 V manbaga 3 Ω rezistor ulangan. Tok kuchini aniqlang.
+A) 3 A
+B) 4 A
++C) 5 A
+D) 6 A
+
+98.	5 A tok 5 Ω rezistordan o‘tmoqda. Kuchlanish nechaga teng?
+A) 10 V
+B) 15 V
+C) 20 V
++D) 25 V
+
+99.	Ketma-ket ulangan 2 Ω va 3 Ω rezistorlardan 2 A tok o‘tmoqda. Umumiy kuchlanishni toping.
+A) 5 V
+B) 8 V
++C) 10 V
+D) 12 V
+
+

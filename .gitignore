@@ -1,0 +1,34 @@
+# Secrets
+.env
+
+# Database & data
+data/
+*.db
+*.sqlite
+*.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtualenvs
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
