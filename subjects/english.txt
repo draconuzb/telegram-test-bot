@@ -1,0 +1,419 @@
+1. What does a computer use to store information permanently?
++A) Hard drive
+B) Monitor
+C) Keyboard
+D) Mouse
+
+2. Which device is used to print documents?
++A) Printer
+B) Speaker
+C) Scanner
+D) Router
+
+3. What does "CPU" stand for?
++A) Central Processing Unit
+B) Computer Personal Unit
+C) Central Program Utility
+D) Control Processing User
+
+4. Which software is commonly used to browse the internet?
++A) Google Chrome
+B) Microsoft Word
+C) Excel
+D) Photoshop
+
+5. What is the main function of a router?
++A) To connect networks
+B) To store data
+C) To print files
+D) To play music
+
+6. Which of the following is an operating system?
++A) Linux
+B) Intel
+C) Adobe
+D) Python
+
+7. What should you use to protect your computer from viruses?
++A) Antivirus software
+B) Calculator
+C) Media player
+D) Scanner
+
+8. Synonym of "quick"
++A) fast
+B) slow
+C) lazy
+D) weak
+
+9. Which programming language is often used for web development?
++A) HTML
+B) RAM
+C) Wi-Fi
+D) USB
+
+10. Antonym of "early"
++A) Late
+B) Soon
+C) First
+D) Quick
+
+11. She ___ speak English well.
++A) Can
+B) Must
+C) Should
+D) May
+
+12. "Confident" means
++A) Sure of yourself
+B) Shy
+C) Tired
+D) Afraid
+
+13. This is ___ interesting book.
++A) An
+B) A
+C) The
+D) —
+
+14. Synonym of "assist"
++A) Help
+B) Ignore
+C) Stop
+D) Push
+
+15. What does "download" mean?
++A) Copying data from the internet to your device
+B) Sending a file to another user
+C) Deleting files from a computer
+D) Printing a document
+
+16. Which part of the computer shows images and text?
++A) Monitor
+B) Motherboard
+C) Keyboard
+D) CPU
+
+17. She has never ___ to London.
++A) Been
+B) Go
+C) Went
+D) Going
+
+18. Antonym of "rich"
++A) Poor
+B) Strong
+C) Healthy
+D) Happy
+
+19. I'm interested ___ music.
++A) In
+B) On
+C) At
+D) For
+
+20. What is a password used for?
++A) To protect personal information
+B) To increase internet speed
+C) To repair hardware
+D) To print documents
+
+21. There isn't ___ milk left.
++A) Much
+B) Many
+C) Few
+D) Several
+
+22. "Polite" means
++A) Respectful
+B) Rude
+C) Loud
+D) Funny
+
+23. He runs very ______.
++A) quickly
+B) quick
+C) quicker
+D) quickest
+
+24. Synonym of "big"
++A) huge
+B) tiny
+C) narrow
+D) thin
+
+25. She is afraid ____ dogs.
++A) of
+B) from
+C) with
+D) at
+
+26. "Borrow" means
++A) take and return
+B) give
+C) buy
+D) lose
+
+27. We ______ meet tomorrow.
++A) are going to
+B) Going
+C) Go
+D) Went
+
+28. Which of these is cloud storage?
++A) Google Drive
+B) Microsoft Paint
+C) VLC Player
+D) Notepad
+
+29. This bag is ___ than mine.
++A) more expensive
+B) Expensive
+C) most expensive
+D) expensiver
+
+30. What does "Wi-Fi" allow you to do?
++A) Connect to the internet wirelessly
+B) Charge a laptop
+C) Edit videos
+D) Scan documents
+
+31. She _____ dinner when I arrived.
++A) was cooking
+B) cooks
+C) cooked
+D) is cooking
+
+32. Synonym of "important"
++A) significant
+B) small
+C) little
+D) tiny
+
+33. I haven't finished my work ________.
++A) Yet
+B) Already
+C) Just
+D) Ever
+
+34. What is the purpose of backup files?
++A) To save copies of important data
+B) To make the computer faster
+C) To create viruses
+D) To improve sound quality
+
+35. Which device connects a home network to the internet?
++A) Router
+B) Projector
+C) Scanner
+D) Keyboard
+
+36. What does "online" mean?
++A) Connected to the internet
+B) Turned off
+C) Broken
+D) Charging
+
+37. He asked me where I _____ from.
++A) Was
+B) Am
+C) Were
+D) Be
+
+38. Which file type is usually an image?
++A) .jpg
+B) .mp3
+C) .txt
+D) .exe
+
+39. She ______ to the market every Sunday.
++A) goes
+B) Go
+C) went
+D) going
+
+40. What is an email mainly used for?
++A) Sending messages
+B) Drawing pictures
+C) Playing games
+D) Scanning files
+
+41. Which symbol is required in every email address?
++A) @
+B) &
+C) #
+D) %
+
+42. What should you do before opening an unknown email attachment?
++A) Check if it is safe
+B) Delete the operating system
+C) Turn off the monitor
+D) Disconnect the keyboard
+
+43. I prefer tea _____ coffee.
++A) to
+B) than
+C) from
+D) with
+
+44. What is cloud storage?
++A) Saving files on internet servers
+B) Storing files only on paper
+C) Printing documents online
+D) Cleaning computer memory
+
+45. The letter _______ yesterday.
++A) was written
+B) wrote
+C) write
+D) is written
+
+46. "Honest" means
++A) truthful
+B) liar
+C) rude
+D) weak
+
+47. If it rains, we ____ stay home.
++A) will
+B) would
+C) did
+D) be
+
+48. Antonym of "clean"
++A) dirty
+B) pure
+C) fresh
+D) neat
+
+49. She works _____ a teacher.
++A) as
+B) like
+C) for
+D) at
+
+50. Synonym of "happy"
++A) joyful
+B) sad
+C) Angry
+D) Tired
+
+51. Which language is commonly used for web pages?
++A) HTML
+B) USB
+C) Wi-Fi
+D) PDF
+
+52. Sam hopes ....... an astronaut one day.
++A) to become
+B) become
+C) becoming
+D) be become
+
+53. The man sitting next to me on the plane was very nervous. He .......... before.
++A) hadn't flown
+B) didn't fly
+C) hasn't flown
+D) wasn't flying
+
+54. What does a programmer do?
++A) Writes computer code
+B) Repairs printers
+C) Sells computers
+D) Creates batteries
+
+55. Which of the following is a programming language?
++A) Python
+B) Router
+C) Scanner
+D) Windows Explorer
+
+56. What is a bug in programming?
++A) An error in code
+B) A hardware cable
+C) A computer virus
+D) A web browser
+
+57. In recent years there has been a large increase .............. the number of people who take no regular exercise.
++A) in
+B) of
+C) for
+D) with
+
+58. By noon, Joe ......... for three hours.
++A) will have been fishing
+B) will be fishing
+C) is going to fish
+D) will be fished
+
+59. It rained so hard the whole village _____.
++A) flooded
+B) burnt
+C) scalded
+D) scared
+
+60. What is antivirus software used for?
++A) Protecting against malware
+B) Editing videos
+C) Creating websites
+D) Printing photos
+
+61. I can't believe you're going on a cruise this summer; it must be costing the ..............!
++A) earth
+B) fortune
+C) nickel
+D) money
+
+62. Try ................ with olive oil. It'll taste better.
++A) cooking
+B) to cook
+C) cook
+D) to cooking
+
+63. What is phishing?
++A) A method of online fraud
+B) A type of printer
+C) A computer game
+D) A programming language
+
+64. "This cake tastes very sweet." "I think I put ... sugar in it."
++A) too much
+B) a lot
+C) too many
+D) a lot of
+
+65. Neil was reading the newspaper when he came .... an article about an old friend of his.
++A) across
+B) into
+C) on
+D) up with
+
+66. Jenny seems …. very happy these days.
++A) to be
+B) be
+C) being
+D) is being
+
+67. Why should passwords be strong?
++A) To protect accounts
+B) To improve graphics
+C) To charge devices faster
+D) To increase RAM
+
+68. Why are software updates important?
++A) They improve security and performance
+B) They only change colors
+C) They remove the keyboard
+D) They slow down computers
+
+69. She was grateful to all the volunteers ............ their help.
++A) for
+B) about
+C) of
+D) in
+
+70. Which of these passwords is the safest?
++A) T9#kL2!p
+B) 123456
+C) password
+D) qwerty

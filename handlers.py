@@ -366,9 +366,13 @@ async def _send_quiz(context: ContextTypes.DEFAULT_TYPE, chat_data: dict) -> Non
     total = len(state["questions"])
     chat_id = state["chat_id"]
 
-    options = [_truncate(t, POLL_OPTION_MAX) for _, t in q.options]
+    # Shuffle option order so the correct answer isn't always at the same spot
+    shuffled = list(q.options)
+    random.shuffle(shuffled)
+    state["current_options"] = shuffled
+    options = [_truncate(t, POLL_OPTION_MAX) for _, t in shuffled]
     try:
-        correct_idx = next(i for i, (letter, _) in enumerate(q.options) if letter == q.correct)
+        correct_idx = next(i for i, (letter, _) in enumerate(shuffled) if letter == q.correct)
     except StopIteration:
         correct_idx = 0
 
@@ -446,9 +450,11 @@ async def on_poll_answer(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
     user = pa.user
 
     chosen_idx = pa.option_ids[0] if pa.option_ids else None
+    # Map shuffled index back to the original option letter
+    shuffled = state.get("current_options") or q.options
     chosen_letter = (
-        q.options[chosen_idx][0]
-        if chosen_idx is not None and chosen_idx < len(q.options)
+        shuffled[chosen_idx][0]
+        if chosen_idx is not None and chosen_idx < len(shuffled)
         else None
     )
 
