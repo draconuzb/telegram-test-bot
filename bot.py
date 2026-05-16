@@ -39,6 +39,7 @@ def main() -> None:
     app.add_handler(CallbackQueryHandler(h.on_subject, pattern=r"^subj:"))
     app.add_handler(CallbackQueryHandler(h.on_begin, pattern=r"^begin:"))
     app.add_handler(CallbackQueryHandler(h.on_top, pattern=r"^top:"))
+    app.add_handler(CallbackQueryHandler(h.on_timer, pattern=r"^timer:"))
     app.add_handler(CallbackQueryHandler(h.on_admin, pattern=r"^admin:"))
     app.add_handler(CallbackQueryHandler(h.on_control, pattern=r"^ctl:"))
 

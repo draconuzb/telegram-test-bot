@@ -9,11 +9,12 @@ from config import DB_PATH
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS users (
-    user_id      INTEGER PRIMARY KEY,
-    username     TEXT,
-    first_name   TEXT,
-    last_name    TEXT,
-    created_at   TEXT NOT NULL
+    user_id        INTEGER PRIMARY KEY,
+    username       TEXT,
+    first_name     TEXT,
+    last_name      TEXT,
+    timer_seconds  INTEGER NOT NULL DEFAULT 30,
+    created_at     TEXT NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS attempts (
@@ -58,6 +59,37 @@ def get_conn():
 def init_db() -> None:
     with get_conn() as conn:
         conn.executescript(SCHEMA)
+        # Migration: add timer_seconds to legacy installations missing it
+        try:
+            conn.execute(
+                "ALTER TABLE users ADD COLUMN timer_seconds INTEGER NOT NULL DEFAULT 30"
+            )
+        except sqlite3.OperationalError:
+            pass  # column already exists
+
+
+VALID_TIMERS = (10, 15, 20, 30)
+
+
+def get_user_timer(user_id: int) -> int:
+    with get_conn() as conn:
+        row = conn.execute(
+            "SELECT timer_seconds FROM users WHERE user_id = ?", (user_id,)
+        ).fetchone()
+    if not row or not row["timer_seconds"]:
+        return 30
+    seconds = int(row["timer_seconds"])
+    return seconds if seconds in VALID_TIMERS else 30
+
+
+def set_user_timer(user_id: int, seconds: int) -> None:
+    if seconds not in VALID_TIMERS:
+        raise ValueError(f"timer must be one of {VALID_TIMERS}")
+    with get_conn() as conn:
+        conn.execute(
+            "UPDATE users SET timer_seconds = ? WHERE user_id = ?",
+            (seconds, user_id),
+        )
 
 
 def upsert_user(user_id: int, username: str, first_name: str, last_name: str) -> None:

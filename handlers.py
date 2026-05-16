@@ -33,6 +33,7 @@ def main_menu_kb(user_id: int) -> InlineKeyboardMarkup:
         [InlineKeyboardButton("📝 Test boshlash", callback_data="menu:start")],
         [InlineKeyboardButton("📊 Mening natijalarim", callback_data="menu:my")],
         [InlineKeyboardButton("🏆 Top natijalar", callback_data="menu:top")],
+        [InlineKeyboardButton("⚙️ Sozlamalar", callback_data="menu:settings")],
         [InlineKeyboardButton("ℹ️ Bot haqida", callback_data="menu:about")],
     ]
     if is_admin(user_id):
@@ -124,7 +125,7 @@ async def cmd_help(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         "/start — Bosh menyu\n"
         "/quiz — Yangi test boshlash (guruhda ham ishlaydi)\n"
         "/cancel — Joriy testni bekor qilish\n\n"
-        f"Har bir savolga *{TIMEOUT_PER_QUESTION} sekund* vaqt beriladi.\n\n"
+        "Har savolga ajratilgan vaqtni ⚙️ *Sozlamalar*'da o'zingiz tanlaysiz (10/15/20/30 sekund).\n\n"
         "👥 *Guruh rejimi:* Botni guruhga qo'shing, /quiz yuboring — barcha a'zolar qatnashishi mumkin."
     )
     await update.message.reply_text(text, parse_mode=ParseMode.MARKDOWN)
@@ -187,16 +188,58 @@ async def on_menu(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         await _show_my_results(q, user.id)
     elif data == "top":
         await _show_top(q)
+    elif data == "settings":
+        await _show_settings(q, user.id)
     elif data == "about":
         await q.edit_message_text(
             "ℹ️ *Bot haqida*\n\n"
             "Bu bot turli fanlar bo'yicha test topshirish uchun yaratilgan.\n\n"
-            f"• Har savol uchun {TIMEOUT_PER_QUESTION} sekund vaqt\n"
+            "• Har savol uchun vaqtni ⚙️ *Sozlamalar*'da o'zingiz tanlaysiz (10/15/20/30 s)\n"
             "• Natijalar saqlanadi va top natijalar reytingi yuritiladi\n"
             "• Adminlar yangi fan qo'shishi mumkin",
             reply_markup=back_kb(),
             parse_mode=ParseMode.MARKDOWN,
         )
+
+
+async def _show_settings(q, user_id: int) -> None:
+    current = db.get_user_timer(user_id)
+    rows = []
+    for s in db.VALID_TIMERS:
+        mark = "  ✅" if s == current else ""
+        rows.append([InlineKeyboardButton(f"⏱ {s} sekund{mark}", callback_data=f"timer:{s}")])
+    rows.append([InlineKeyboardButton("⬅️ Bosh menyu", callback_data="menu:home")])
+    await q.edit_message_text(
+        f"⚙️ *Sozlamalar*\n"
+        f"━━━━━━━━━━━━━━━━━━\n"
+        f"Har savolga ajratilgan vaqt: *{current} sekund*\n\n"
+        f"Bu sozlama keyingi testlarda qo'llaniladi.\n"
+        f"Guruh kvizida — kvizni boshlagan kishining sozlamasi ishlatiladi.",
+        reply_markup=InlineKeyboardMarkup(rows),
+        parse_mode=ParseMode.MARKDOWN,
+    )
+
+
+async def on_timer(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    cq = update.callback_query
+    try:
+        seconds = int(cq.data.split(":", 1)[1])
+    except ValueError:
+        await cq.answer("Noto'g'ri qiymat")
+        return
+    if seconds not in db.VALID_TIMERS:
+        await cq.answer("Noto'g'ri qiymat")
+        return
+    user_id = update.effective_user.id
+    db.upsert_user(
+        user_id,
+        update.effective_user.username or "",
+        update.effective_user.first_name or "",
+        update.effective_user.last_name or "",
+    )
+    db.set_user_timer(user_id, seconds)
+    await cq.answer(f"✅ Vaqt {seconds} sekundga sozlandi")
+    await _show_settings(cq, user_id)
 
 
 async def _show_subjects(q) -> None:
@@ -231,10 +274,11 @@ async def on_subject(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None
         return
 
     display_name = stem.replace("_", " ").replace("-", " ").title()
+    user_timer = db.get_user_timer(update.effective_user.id)
     text = (
         f"📘 *{display_name}*\n\n"
         f"📝 Savollar soni: *{len(questions)} ta*\n"
-        f"⏱ Har savolga: *{TIMEOUT_PER_QUESTION} sekund*\n"
+        f"⏱ Har savolga: *{user_timer} sekund*\n"
         f"🔀 Savollar tasodifiy tartibda beriladi\n\n"
         f"Tayyormisiz?"
     )
@@ -299,6 +343,7 @@ async def on_begin(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     random.shuffle(questions)
     display_name = stem.replace("_", " ").replace("-", " ").title()
     is_group = _is_group(chat)
+    timer_seconds = db.get_user_timer(user.id)
 
     context.chat_data["test"] = {
         "subject": display_name,
@@ -309,6 +354,7 @@ async def on_begin(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         "is_group": is_group,
         "starter_user_id": user.id,
         "starter_name": user.first_name or "",
+        "timer_seconds": timer_seconds,
         "participants": {},
         "current_poll_id": None,
         "current_q_idx": -1,
@@ -326,7 +372,7 @@ async def on_begin(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             f"🚀 *Test boshlandi!*\n\n"
             f"📘 Fan: *{display_name}*\n"
             f"📝 Savollar: *{len(questions)} ta*\n"
-            f"⏱ Har savolga: *{TIMEOUT_PER_QUESTION} sekund*\n"
+            f"⏱ Har savolga: *{timer_seconds} sekund*\n"
             f"{mode_line}\n"
             f"To'xtatish: /cancel",
             parse_mode=ParseMode.MARKDOWN,
@@ -397,6 +443,8 @@ async def _send_quiz(context: ContextTypes.DEFAULT_TYPE, chat_data: dict) -> Non
         except Exception:
             pass
 
+    timer_seconds = state.get("timer_seconds", TIMEOUT_PER_QUESTION)
+
     msg = await context.bot.send_poll(
         chat_id=chat_id,
         question=poll_question,
@@ -404,7 +452,7 @@ async def _send_quiz(context: ContextTypes.DEFAULT_TYPE, chat_data: dict) -> Non
         type=Poll.QUIZ,
         correct_option_id=correct_idx,
         is_anonymous=False,
-        open_period=TIMEOUT_PER_QUESTION,
+        open_period=timer_seconds,
         explanation=explanation,
         reply_markup=_control_kb_active(),
     )
@@ -422,7 +470,7 @@ async def _send_quiz(context: ContextTypes.DEFAULT_TYPE, chat_data: dict) -> Non
     _cancel_timer_jobs(state)
     job = context.job_queue.run_once(
         _on_quiz_timer_end,
-        when=TIMEOUT_PER_QUESTION + 1,
+        when=timer_seconds + 1,
         data={"poll_id": msg.poll.id, "q_idx": idx, "chat_id": chat_id},
         name=f"timer_end_{chat_id}_{idx}",
     )
